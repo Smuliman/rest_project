@@ -1,16 +1,18 @@
+//Introducing dependencies and setting up environment
 var express = require("express");
-/* const { FindCursor } = require("mongodb"); */
 var mongoose = require("mongoose");
 var app = express();
-/* const MongoClient = require("mongodb").MongoClient; */
 const port = process.env.PORT || 3000;
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const password = "Testi2022";
 
 const uri =
   "mongodb+srv://MongoSmuli:" + password + "@cluster1.jwcch.mongodb.net/goals";
+
+//connecting to MongoDB database with mongoose, log comment to console if connection is success or failure
 try {
-  // Connect to the MongoDB cluster
   mongoose.connect(
     uri,
     { useNewUrlParser: true, useUnifiedTopology: true },
@@ -19,7 +21,7 @@ try {
 } catch (e) {
   console.log("could not connect");
 }
-
+//creating VAR Schema for database with validations
 var Schema = mongoose.Schema;
 
 var goalSchema = new Schema({
@@ -27,15 +29,12 @@ var goalSchema = new Schema({
   content: { type: String, required: true, minlength: 10, maxlength: 1000 },
 });
 
+//creating mongoose object GoalData from Schema
 var GoalData = mongoose.model("GoalData", goalSchema);
 
-var bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: true }));
-
+//creating routes with express
 app.get("/", function (req, res) {
-  res.send(
-    "This is an app that lets you save and moderate your goals in life!"
-  );
+  res.sendFile(__dirname + "//public/index.html");
 });
 
 app.get("/api/getall", function (req, res) {
@@ -49,9 +48,6 @@ app.get("/api/:id", function (req, res) {
   });
 });
 
-/* app.get("/api/:id", function (req, res) {
-  res.send("Get spesific goal using goal id");
-}); */
 app.post("/api/add", function (req, res) {
   var newGoal = new GoalData({
     title: req.body.title,
