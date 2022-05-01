@@ -2,10 +2,12 @@
 
 ### readme link:
 
-https://github.com/Smuliman/rest_project/readme.md
+https://github.com/Smuliman/rest_project/blob/master/readme.md
 
 ### git hub link:
 
 https://github.com/Smuliman/rest_project
 
 ### Assaignment:
+
+![Assaignment image](/files/assaignment.png)
