@@ -4,6 +4,9 @@ var app = express();
 const MongoClient = require("mongodb").MongoClient;
 const port = process.env.PORT || 3000;
 
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const password = "Testi2022";
 
 const uri =
@@ -20,7 +23,7 @@ var query = {
   title: "/Jedi/i",
 };
 
-client.connect((err) => {
+/* client.connect((err) => {
   const collection = client.db("sample_mflix").collection("movies");
   if (err) throw err;
   collection
@@ -31,18 +34,27 @@ client.connect((err) => {
       console.log(result);
       client.close();
     });
-});
+}); */
 
 app.get("/", function (req, res) {
   res.send("Etusivu REST");
 });
 
-app.get("/ivar", function (req, res) {
-  res.send("fgjlbeebot");
+app.get("/api/getall", function (req, res) {
+  res.send("tulostetaan kaikki tavoitteet");
 });
 
-app.get("/theo", function (req, res) {
-  res.send("karlpapper");
+app.get("/api/:id", function (req, res) {
+  res.send("Muokataan tavoitetta id");
+});
+app.get("/api/add", function (req, res) {
+  res.send("lisätään leffa: " + req.body.title + " (" + req.body.text + ")");
+});
+app.get("/api/update/:id", function (req, res) {
+  res.send("muokataan tavoitetta id: llä: " + req.params.id);
+});
+app.get("/api/delete/:id", function (req, res) {
+  res.send("poistetaan tavoite id: llä: " + req.params.id);
 });
 
 app.get("*", function (req, res) {
