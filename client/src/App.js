@@ -28,8 +28,10 @@ function App() {
   return (
     <div>
       <Jumbo />
-      <Link to="/">Etusivu</Link>
-      <Link to="/getall">Tavoitteet</Link>
+      <Link to="/">Etusivu </Link>
+      <Link to="/getall">Tavoitteet </Link>
+      <Link to="/getone">Hae tavoite </Link>
+      <Link to="/add">Lisää tavoite </Link>
     </div>
   );
 }

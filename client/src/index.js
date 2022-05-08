@@ -5,6 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DataFetching from "./Components/DataFetching";
+import FetchOne from "./Components/FetchOne";
+import AddGoal from "./Components/AddGoal";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,6 +15,8 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/getall" element={<DataFetching />} />
+        <Route path="/getone" element={<FetchOne />} />
+        <Route path="/add" element={<AddGoal />} />
         <Route path="*" element={<p>There is nothing here, sorry</p>} />
       </Routes>
     </BrowserRouter>
