@@ -3,13 +3,18 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DataFetching from "./Components/DataFetching";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/getall" element={<DataFetching />} />
+        <Route path="*" element={<p>There is nothing here, sorry</p>} />
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );

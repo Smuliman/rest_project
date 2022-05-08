@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import App from "../App";
 
 function DataFetching() {
   const [posts, setPosts] = useState([]);
@@ -18,6 +19,7 @@ function DataFetching() {
 
   return (
     <div>
+      <App />
       <ul>
         {posts.map((post) => (
           <li key={post._id}>

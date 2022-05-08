@@ -22,11 +22,14 @@ export default App;
  */
 
 import { Link } from "react-router-dom";
+import Jumbo from "./Components/Jumbo/jumbotron";
 
 function App() {
   return (
     <div>
-      <Link to="/">Tavoitteet</Link>
+      <Jumbo />
+      <Link to="/">Etusivu</Link>
+      <Link to="/getall">Tavoitteet</Link>
     </div>
   );
 }
