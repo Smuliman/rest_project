@@ -41,6 +41,7 @@ class AddGoal extends Component {
     return (
       <div>
         <App />
+        <h2>Set New Goal:</h2>
         <form
           action="/urlencoded?title=title&content=tavoite"
           method="POST"
@@ -48,6 +49,7 @@ class AddGoal extends Component {
           onSubmit={this.submitHandler}
         >
           <div>
+            <label>Title: </label>
             <input
               type="text"
               name="title"
@@ -56,6 +58,7 @@ class AddGoal extends Component {
             />
           </div>
           <div>
+            <label>Goal: </label>
             <input
               type="text"
               name="content"
