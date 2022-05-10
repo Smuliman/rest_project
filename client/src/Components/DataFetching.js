@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import App from "../App";
+import Footer from "./Footer";
 
 function DataFetching() {
   const [posts, setPosts] = useState([]);
@@ -23,10 +24,13 @@ function DataFetching() {
       <ul>
         {posts.map((post) => (
           <li key={post._id}>
-            {"Tavoite: " + post.title} {post.content}
+            {"id: " + post._id} <br></br>
+            {"Tavoite: " + post.title} <br></br> {"selite: " + post.content}
           </li>
         ))}
       </ul>
+      <br></br>
+      <Footer />
     </div>
   );
 }

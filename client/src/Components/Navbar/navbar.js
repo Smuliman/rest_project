@@ -27,13 +27,13 @@ function Navbar() {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="getone">
+                <a class="nav-link" href="/getone">
                   Hae tavoite
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Muokkaa(ei vielä käyötssä)
+                <a class="nav-link" href="/delete">
+                  Poista tavoite
                 </a>
               </li>
             </ul>

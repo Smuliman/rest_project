@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import App from "../App";
+import "../Components/FetchOne.css";
+import Footer from "./Footer";
 
 function FetchOne() {
   const [post, setPost] = useState({});
-  const [_id, setId] = useState("626ed325948a278f7a448cc2");
-  const [idFromButtonClick, setIdFromButtonClick] = useState(
-    "626ed325948a278f7a448cc2"
-  );
+  const [_id, setId] = useState("kirjoita id");
+  const [idFromButtonClick, setIdFromButtonClick] = useState("");
   const handleClick = () => {
     setIdFromButtonClick(_id);
   };
@@ -27,12 +27,24 @@ function FetchOne() {
   return (
     <div>
       <App />
-      <input type="text" value={_id} onChange={(e) => setId(e.target.value)} />
-      <button type="button" onClick={handleClick}>
-        Fetch goal
-      </button>
-      <div>
-        {"Tavoite: " + post.title} {post.content}
+      <br></br>
+      <div id="typeId">
+        <label>Kirjoita tavoitteen id: </label>
+        <input
+          type="text"
+          value={_id}
+          onChange={(e) => setId(e.target.value)}
+        />
+
+        <button type="button" onClick={handleClick}>
+          Hae tavoite
+        </button>
+      </div>
+      <div id="fetchedId">
+        <p>
+          {" "}
+          {"Tavoite: " + post.title} <br></br> {"selite: " + post.content}
+        </p>
       </div>
       {/* <ul>
         {posts.map((post) => (
@@ -41,6 +53,8 @@ function FetchOne() {
           </li>
         ))}
       </ul> */}
+      <br></br>
+      <Footer />
     </div>
   );
 }
