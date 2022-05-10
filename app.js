@@ -47,6 +47,8 @@ app.get("/api/getall", function (req, res) {
   });
 });
 app.get("/api/:id", function (req, res) {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id))
+    return Error({ status: 422 });
   GoalData.findOne({ _id: req.params.id }).then(function (goals) {
     res.send(goals);
   });
