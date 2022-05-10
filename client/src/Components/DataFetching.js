@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import App from "../App";
 import Footer from "./Footer";
+import "../Components/Components.css";
 
 function DataFetching() {
   const [posts, setPosts] = useState([]);
@@ -19,7 +20,7 @@ function DataFetching() {
   }, []);
 
   return (
-    <div>
+    <div id="fetchedGoals">
       <App />
       <ul>
         {posts.map((post) => (

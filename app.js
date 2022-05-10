@@ -75,6 +75,9 @@ app.put("/api/update/:id", function (req, res) {
   );
 });
 app.delete("/api/delete/:id", function (req, res) {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id))
+    return Error({ status: 422 });
+
   GoalData.findByIdAndDelete({ _id: req.params.id }).then(function (goals) {
     res.send(goals);
   });

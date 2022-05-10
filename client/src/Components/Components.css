@@ -1,0 +1,18 @@
+#newgoalform {
+    margin-left: 5%;
+}
+#deleteform {
+    margin-left: 5%;
+}
+#typeId {
+    margin-left: 5%;
+}
+#fetchedId {
+    margin-left: 5%;
+}
+footer {
+    height: 100px;
+}
+#fetchedGoals {
+    margin-bottom: 100px;
+}

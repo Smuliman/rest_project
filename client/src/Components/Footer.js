@@ -1,3 +1,5 @@
+import "../Components/Components.css";
+
 function Footer() {
   return (
     <div>

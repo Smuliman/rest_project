@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import App from "../App";
 import qs from "qs";
-import "../Components/AddGoal.css";
+import "../Components/Components.css";
 import Footer from "./Footer";
 
 class AddGoal extends Component {

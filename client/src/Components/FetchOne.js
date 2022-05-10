@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import App from "../App";
-import "../Components/FetchOne.css";
+import "../Components/Components.css";
 import Footer from "./Footer";
 
 function FetchOne() {
