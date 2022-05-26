@@ -1,5 +1,9 @@
 ## Project 3 & 4 in Full stack Course
 
+##
+
+start app with command "npm run dev"
+
 ### readme link:
 
 https://github.com/Smuliman/rest_project/blob/master/readme.md
